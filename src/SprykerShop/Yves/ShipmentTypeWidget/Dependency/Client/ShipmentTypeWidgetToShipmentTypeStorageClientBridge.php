@@ -27,22 +27,12 @@ class ShipmentTypeWidgetToShipmentTypeStorageClientBridge implements ShipmentTyp
         $this->shipmentTypeStorageClient = $shipmentTypeStorageClient;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeStorageCriteriaTransfer $shipmentTypeStorageCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShipmentTypeStorageCollectionTransfer
-     */
     public function getShipmentTypeStorageCollection(
         ShipmentTypeStorageCriteriaTransfer $shipmentTypeStorageCriteriaTransfer
     ): ShipmentTypeStorageCollectionTransfer {
         return $this->shipmentTypeStorageClient->getShipmentTypeStorageCollection($shipmentTypeStorageCriteriaTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShipmentTypeCollectionTransfer
-     */
     public function getAvailableShipmentTypes(QuoteTransfer $quoteTransfer): ShipmentTypeCollectionTransfer
     {
         return $this->shipmentTypeStorageClient->getAvailableShipmentTypes($quoteTransfer);

@@ -41,19 +41,11 @@ class AddressFormChecker implements AddressFormCheckerInterface
      */
     protected ShipmentTypeWidgetConfig $shipmentTypeWidgetConfig;
 
-    /**
-     * @param \SprykerShop\Yves\ShipmentTypeWidget\ShipmentTypeWidgetConfig $shipmentTypeWidgetConfig
-     */
     public function __construct(ShipmentTypeWidgetConfig $shipmentTypeWidgetConfig)
     {
         $this->shipmentTypeWidgetConfig = $shipmentTypeWidgetConfig;
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormInterface $form
-     *
-     * @return bool
-     */
     public function isDeliverToMultipleAddresses(FormInterface $form): bool
     {
         $shippingAddressForm = $this->findShippingAddressForm($form);
@@ -69,22 +61,12 @@ class AddressFormChecker implements AddressFormCheckerInterface
         return $shippingAddressForm->get(static::FIELD_ID_CUSTOMER_ADDRESS)->getData() == static::VALUE_DELIVER_TO_MULTIPLE_ADDRESSES;
     }
 
-    /**
-     * @param \Spryker\Shared\Kernel\Transfer\AbstractTransfer|null $data
-     *
-     * @return bool
-     */
     public function isApplicableForShipmentTypeAddressStepFormHydration(?AbstractTransfer $data): bool
     {
         return $data instanceof QuoteTransfer
             || $data instanceof ItemTransfer && $this->checkNotApplicableShipmentTypeAddressStepFormItemPropertiesForHydration($data);
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormInterface $form
-     *
-     * @return \Symfony\Component\Form\FormInterface|null
-     */
     protected function findShippingAddressForm(FormInterface $form): ?FormInterface
     {
         $parentForm = $form->getRoot();
@@ -96,11 +78,6 @@ class AddressFormChecker implements AddressFormCheckerInterface
         return null;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return bool
-     */
     protected function checkNotApplicableShipmentTypeAddressStepFormItemPropertiesForHydration(ItemTransfer $itemTransfer): bool
     {
         foreach ($this->shipmentTypeWidgetConfig->getNotApplicableShipmentTypeAddressStepFormItemPropertiesForHydration() as $notApplicableItemProperty) {

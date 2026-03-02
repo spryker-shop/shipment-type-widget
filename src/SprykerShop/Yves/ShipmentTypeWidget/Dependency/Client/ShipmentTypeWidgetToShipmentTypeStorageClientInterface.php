@@ -14,19 +14,9 @@ use Generated\Shared\Transfer\ShipmentTypeStorageCriteriaTransfer;
 
 interface ShipmentTypeWidgetToShipmentTypeStorageClientInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeStorageCriteriaTransfer $shipmentTypeStorageCriteriaTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShipmentTypeStorageCollectionTransfer
-     */
     public function getShipmentTypeStorageCollection(
         ShipmentTypeStorageCriteriaTransfer $shipmentTypeStorageCriteriaTransfer
     ): ShipmentTypeStorageCollectionTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShipmentTypeCollectionTransfer
-     */
     public function getAvailableShipmentTypes(QuoteTransfer $quoteTransfer): ShipmentTypeCollectionTransfer;
 }

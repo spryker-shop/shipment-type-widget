@@ -31,17 +31,11 @@ use Symfony\Component\Form\FormTypeInterface;
  */
 class ShipmentTypeWidgetFactory extends AbstractFactory
 {
-    /**
-     * @return \Symfony\Component\Form\FormTypeInterface
-     */
     public function createShipmentTypeAddressStepForm(): FormTypeInterface
     {
         return new ShipmentTypeAddressStepForm();
     }
 
-    /**
-     * @return \SprykerShop\Yves\ShipmentTypeWidget\Hydrator\ShipmentTypeFormPreSetDataHydratorInterface
-     */
     public function createShipmentTypeFormPreSetDataHydrator(): ShipmentTypeFormPreSetDataHydratorInterface
     {
         return new ShipmentTypeFormPreSetDataHydrator(
@@ -49,9 +43,6 @@ class ShipmentTypeWidgetFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \SprykerShop\Yves\ShipmentTypeWidget\Hydrator\ShipmentTypeFormSubmitDataHydratorInterface
-     */
     public function createShipmentTypeFormSubmitDataHydrator(): ShipmentTypeFormSubmitDataHydratorInterface
     {
         return new ShipmentTypeFormSubmitDataHydrator(
@@ -59,9 +50,6 @@ class ShipmentTypeWidgetFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \SprykerShop\Yves\ShipmentTypeWidget\Expander\ShipmentTypeFormOptionExpanderInterface
-     */
     public function createShipmentTypeFormOptionExpander(): ShipmentTypeFormOptionExpanderInterface
     {
         return new ShipmentTypeFormOptionExpander(
@@ -69,9 +57,6 @@ class ShipmentTypeWidgetFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \SprykerShop\Yves\ShipmentTypeWidget\Checker\AddressFormCheckerInterface
-     */
     public function createAddressFormChecker(): AddressFormCheckerInterface
     {
         return new AddressFormChecker(
@@ -79,9 +64,6 @@ class ShipmentTypeWidgetFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \SprykerShop\Yves\ShipmentTypeWidget\Reader\ShipmentTypeReaderInterface
-     */
     public function createShipmentTypeReader(): ShipmentTypeReaderInterface
     {
         return new ShipmentTypeReader(
@@ -89,25 +71,16 @@ class ShipmentTypeWidgetFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \SprykerShop\Yves\ShipmentTypeWidget\Expander\QuoteExpanderInterface
-     */
     public function createQuoteExpander(): QuoteExpanderInterface
     {
         return new QuoteExpander();
     }
 
-    /**
-     * @return \SprykerShop\Yves\ShipmentTypeWidget\Cleaner\QuoteCleanerInterface
-     */
     public function createQuoteCleaner(): QuoteCleanerInterface
     {
         return new QuoteCleaner();
     }
 
-    /**
-     * @return \SprykerShop\Yves\ShipmentTypeWidget\Dependency\Client\ShipmentTypeWidgetToShipmentTypeStorageClientInterface
-     */
     public function getShipmentTypeStorageClient(): ShipmentTypeWidgetToShipmentTypeStorageClientInterface
     {
         return $this->getProvidedDependency(ShipmentTypeWidgetDependencyProvider::CLIENT_SHIPMENT_TYPE_STORAGE);

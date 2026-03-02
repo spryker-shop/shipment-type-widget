@@ -23,9 +23,6 @@ class ShipmentTypeFormSubmitDataHydrator implements ShipmentTypeFormSubmitDataHy
      */
     protected AddressFormCheckerInterface $addressFormChecker;
 
-    /**
-     * @param \SprykerShop\Yves\ShipmentTypeWidget\Checker\AddressFormCheckerInterface $addressFormChecker
-     */
     public function __construct(AddressFormCheckerInterface $addressFormChecker)
     {
         $this->addressFormChecker = $addressFormChecker;
@@ -87,13 +84,6 @@ class ShipmentTypeFormSubmitDataHydrator implements ShipmentTypeFormSubmitDataHy
         $event->setData($quoteTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     * @param \Symfony\Component\Form\FormInterface $form
-     * @param \Symfony\Component\Form\FormEvent $event
-     *
-     * @return void
-     */
     protected function hydrateShipmentTypeToItem(ItemTransfer $itemTransfer, FormInterface $form, FormEvent $event): void
     {
         if (!$this->addressFormChecker->isDeliverToMultipleAddresses($form)) {
@@ -108,12 +98,6 @@ class ShipmentTypeFormSubmitDataHydrator implements ShipmentTypeFormSubmitDataHy
         $event->setData($itemTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     * @param \Generated\Shared\Transfer\ShipmentTypeTransfer|null $shipmentTypeTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     protected function setShipmentTypesToQuoteLevel(
         QuoteTransfer $quoteTransfer,
         ?ShipmentTypeTransfer $shipmentTypeTransfer

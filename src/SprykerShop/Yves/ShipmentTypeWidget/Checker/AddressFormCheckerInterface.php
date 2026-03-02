@@ -12,17 +12,7 @@ use Symfony\Component\Form\FormInterface;
 
 interface AddressFormCheckerInterface
 {
-    /**
-     * @param \Symfony\Component\Form\FormInterface $form
-     *
-     * @return bool
-     */
     public function isDeliverToMultipleAddresses(FormInterface $form): bool;
 
-    /**
-     * @param \Spryker\Shared\Kernel\Transfer\AbstractTransfer|null $data
-     *
-     * @return bool
-     */
     public function isApplicableForShipmentTypeAddressStepFormHydration(?AbstractTransfer $data): bool;
 }

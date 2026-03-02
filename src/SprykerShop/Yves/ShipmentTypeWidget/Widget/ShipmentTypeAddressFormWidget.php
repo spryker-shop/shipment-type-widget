@@ -42,9 +42,6 @@ class ShipmentTypeAddressFormWidget extends AbstractWidget
      */
     protected const PARAMETER_DELIVERY_SHIPMENT_TYPES = 'deliveryShipmentTypes';
 
-    /**
-     * @param \Symfony\Component\Form\FormView $checkoutAddressForm
-     */
     public function __construct(FormView $checkoutAddressForm)
     {
         $this->addIsVisibleParameter($checkoutAddressForm);
@@ -54,27 +51,16 @@ class ShipmentTypeAddressFormWidget extends AbstractWidget
         $this->addDeliveryShipmentTypesParameter();
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'ShipmentTypeAddressFormWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@ShipmentTypeWidget/views/shipment-type-address-form/shipment-type-address-form.twig';
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormView $checkoutAddressForm
-     *
-     * @return void
-     */
     protected function addIsVisibleParameter(FormView $checkoutAddressForm): void
     {
         $this->addParameter(
@@ -83,11 +69,6 @@ class ShipmentTypeAddressFormWidget extends AbstractWidget
         );
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormView $checkoutAddressForm
-     *
-     * @return void
-     */
     protected function addShipmentTypeFormParameter(FormView $checkoutAddressForm): void
     {
         $this->addParameter(
@@ -96,11 +77,6 @@ class ShipmentTypeAddressFormWidget extends AbstractWidget
         );
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormView $checkoutAddressForm
-     *
-     * @return void
-     */
     protected function addCheckoutAddressFormParameter(FormView $checkoutAddressForm): void
     {
         $this->addParameter(static::PARAMETER_CHECKOUT_ADDRESS_FORM, $checkoutAddressForm);
@@ -116,9 +92,6 @@ class ShipmentTypeAddressFormWidget extends AbstractWidget
         $this->addParameter(static::PARAMETER_DEFAULT_SHIPMENT_TYPE, $this->getConfig()->getDefaultShipmentType());
     }
 
-    /**
-     * @return void
-     */
     protected function addDeliveryShipmentTypesParameter(): void
     {
         $this->addParameter(static::PARAMETER_DELIVERY_SHIPMENT_TYPES, $this->getConfig()->getDeliveryShipmentTypes());

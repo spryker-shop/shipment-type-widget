@@ -21,11 +21,6 @@ class ShipmentTypeWidgetDependencyProvider extends AbstractBundleDependencyProvi
      */
     public const CLIENT_SHIPMENT_TYPE_STORAGE = 'CLIENT_SHIPMENT_TYPE_STORAGE';
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     public function provideDependencies(Container $container): Container
     {
         $container = parent::provideDependencies($container);
@@ -34,11 +29,6 @@ class ShipmentTypeWidgetDependencyProvider extends AbstractBundleDependencyProvi
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addShipmentTypeStorageClient(Container $container): Container
     {
         $container->set(static::CLIENT_SHIPMENT_TYPE_STORAGE, function (Container $container) {

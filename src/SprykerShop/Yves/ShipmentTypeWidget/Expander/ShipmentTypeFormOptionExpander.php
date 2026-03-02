@@ -26,19 +26,11 @@ class ShipmentTypeFormOptionExpander implements ShipmentTypeFormOptionExpanderIn
      */
     protected ShipmentTypeReaderInterface $shipmentTypeReader;
 
-    /**
-     * @param \SprykerShop\Yves\ShipmentTypeWidget\Reader\ShipmentTypeReaderInterface $shipmentTypeReader
-     */
     public function __construct(ShipmentTypeReaderInterface $shipmentTypeReader)
     {
         $this->shipmentTypeReader = $shipmentTypeReader;
     }
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver

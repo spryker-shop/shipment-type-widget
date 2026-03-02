@@ -22,9 +22,6 @@ class ShipmentTypeReader implements ShipmentTypeReaderInterface
      */
     protected ShipmentTypeWidgetToShipmentTypeStorageClientInterface $shipmentTypeStorageClient;
 
-    /**
-     * @param \SprykerShop\Yves\ShipmentTypeWidget\Dependency\Client\ShipmentTypeWidgetToShipmentTypeStorageClientInterface $shipmentTypeStorageClient
-     */
     public function __construct(ShipmentTypeWidgetToShipmentTypeStorageClientInterface $shipmentTypeStorageClient)
     {
         $this->shipmentTypeStorageClient = $shipmentTypeStorageClient;
@@ -82,12 +79,6 @@ class ShipmentTypeReader implements ShipmentTypeReaderInterface
         return $indexedShipmentTypes;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ShipmentTypeStorageCollectionTransfer $shipmentTypeStorageCollectionTransfer
-     * @param \Generated\Shared\Transfer\ShipmentTypeCollectionTransfer $shipmentTypeCollectionTransfer
-     *
-     * @return \Generated\Shared\Transfer\ShipmentTypeCollectionTransfer
-     */
     protected function mapShipmentTypeStorageCollectionTransferToShipmentTypeCollectionTransfer(
         ShipmentTypeStorageCollectionTransfer $shipmentTypeStorageCollectionTransfer,
         ShipmentTypeCollectionTransfer $shipmentTypeCollectionTransfer

@@ -29,9 +29,6 @@ class ShipmentTypeFormPreSetDataHydrator implements ShipmentTypeFormPreSetDataHy
      */
     protected AddressFormCheckerInterface $addressFormChecker;
 
-    /**
-     * @param \SprykerShop\Yves\ShipmentTypeWidget\Checker\AddressFormCheckerInterface $addressFormChecker
-     */
     public function __construct(AddressFormCheckerInterface $addressFormChecker)
     {
         $this->addressFormChecker = $addressFormChecker;
@@ -77,11 +74,6 @@ class ShipmentTypeFormPreSetDataHydrator implements ShipmentTypeFormPreSetDataHy
         return $this->getSelectedShipmentTypeKeyForItem($data);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return string|null
-     */
     protected function getSelectedShipmentTypeKeyForQuote(QuoteTransfer $quoteTransfer): ?string
     {
         if ($this->isItemsHaveNoShipmentType($quoteTransfer)) {
@@ -98,21 +90,11 @@ class ShipmentTypeFormPreSetDataHydrator implements ShipmentTypeFormPreSetDataHy
         return null;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return string|null
-     */
     protected function getSelectedShipmentTypeKeyForItem(ItemTransfer $itemTransfer): ?string
     {
         return $itemTransfer->getShipmentType() ? $itemTransfer->getShipmentTypeOrFail()->getKey() : null;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return bool
-     */
     protected function isItemsHaveSameShipmentType(QuoteTransfer $quoteTransfer): bool
     {
         $shipmentTypeKeys = [];
@@ -131,11 +113,6 @@ class ShipmentTypeFormPreSetDataHydrator implements ShipmentTypeFormPreSetDataHy
         return $items->count() && count($shipmentTypeKeys) && $items->count() === count(reset($shipmentTypeKeys));
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return bool
-     */
     protected function isItemsHaveNoShipmentType(QuoteTransfer $quoteTransfer): bool
     {
         foreach ($quoteTransfer->getItems() as $itemTransfer) {

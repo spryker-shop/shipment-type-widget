@@ -12,11 +12,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 interface ShipmentTypeFormOptionExpanderInterface
 {
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void;
 
     /**

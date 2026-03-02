@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\QuoteTransfer;
 
 class QuoteCleaner implements QuoteCleanerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     public function cleanShipmentTypeUuidFromQuoteItems(QuoteTransfer $quoteTransfer): QuoteTransfer
     {
         foreach ($quoteTransfer->getItems() as $itemTransfer) {
@@ -31,11 +26,6 @@ class QuoteCleaner implements QuoteCleanerInterface
         return $quoteTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return void
-     */
     protected function cleanShipmentTypeFromItemShipmentMethod(ItemTransfer $itemTransfer): void
     {
         if (!$itemTransfer->getShipmentOrFail()->getMethod() || !$itemTransfer->getShipmentOrFail()->getMethodOrFail()->getShipmentType()) {

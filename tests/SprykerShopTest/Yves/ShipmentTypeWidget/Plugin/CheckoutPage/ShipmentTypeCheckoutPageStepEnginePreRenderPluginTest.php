@@ -27,9 +27,6 @@ class ShipmentTypeCheckoutPageStepEnginePreRenderPluginTest extends Unit
      */
     protected ShipmentTypeWidgetYvesTester $tester;
 
-    /**
-     * @return void
-     */
     public function testExecuteExpandsQuoteItemsWhenItemWithShipmentTypeUuidGiven(): void
     {
         // Arrange
@@ -53,9 +50,6 @@ class ShipmentTypeCheckoutPageStepEnginePreRenderPluginTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testExecuteDoesntExpandQuoteItemsWhenItemWithoutShipmentTypeGiven(): void
     {
         // Arrange
@@ -75,9 +69,6 @@ class ShipmentTypeCheckoutPageStepEnginePreRenderPluginTest extends Unit
         );
     }
 
-    /**
-     * @return void
-     */
     public function testExecuteDoesntOverrideItemsShipmentShipmentTypeUuidWhenItemWithoutShipmentTypeGiven(): void
     {
         // Arrange

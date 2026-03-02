@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\QuoteTransfer;
 
 class QuoteExpander implements QuoteExpanderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteTransfer
-     */
     public function expandQuoteItemsWithShipmentType(QuoteTransfer $quoteTransfer): QuoteTransfer
     {
         foreach ($quoteTransfer->getItems() as $itemTransfer) {
@@ -29,11 +24,6 @@ class QuoteExpander implements QuoteExpanderInterface
         return $quoteTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return bool
-     */
     protected function isItemExpandable(ItemTransfer $itemTransfer): bool
     {
         return $itemTransfer->getShipment() !== null

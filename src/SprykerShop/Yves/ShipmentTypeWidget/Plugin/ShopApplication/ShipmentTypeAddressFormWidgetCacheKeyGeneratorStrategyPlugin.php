@@ -23,9 +23,6 @@ class ShipmentTypeAddressFormWidgetCacheKeyGeneratorStrategyPlugin extends Abstr
         return null;
     }
 
-    /**
-     * @return string
-     */
     public function getWidgetClassName(): string
     {
         return ShipmentTypeAddressFormWidget::class;

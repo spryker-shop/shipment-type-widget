@@ -28,9 +28,6 @@ class ShipmentTypeCheckoutAddressStepPreGroupItemsByShipmentPluginTest extends U
      */
     protected ShipmentTypeWidgetYvesTester $tester;
 
-    /**
-     * @return void
-     */
     public function testPreGroupItemsByShipmentCleansShipmentTypeUuidsFromQuoteItems(): void
     {
         // Arrange

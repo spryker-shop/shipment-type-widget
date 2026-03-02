@@ -42,11 +42,6 @@ class ShipmentTypeSubForm extends AbstractType
      */
     protected const SHIPMENT_TYPE_DELIVERY = 'delivery';
 
-    /**
-     * @param \Symfony\Component\OptionsResolver\OptionsResolver $resolver
-     *
-     * @return void
-     */
     public function configureOptions(OptionsResolver $resolver): void
     {
         parent::configureOptions($resolver);
