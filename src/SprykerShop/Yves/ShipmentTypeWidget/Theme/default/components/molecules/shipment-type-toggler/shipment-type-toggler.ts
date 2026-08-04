@@ -7,8 +7,6 @@ export default class ShipmentTypeToggler extends Component {
     protected billingSameAsShippingContainer: HTMLElement;
     protected billingSameAsShippingInput: HTMLInputElement;
 
-    protected readyCallback(): void {}
-
     protected init(): void {
         this.triggers = <HTMLInputElement[]>Array.from(this.getElementsByClassName(`${this.jsName}__trigger`));
         this.defaultShipmentTypeTargets = <HTMLElement[]>(
